@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/31889248/README.2.md)
 # 🏡 Housing Price Prediction
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
@@ -58,9 +59,9 @@ The dataset used is **`Housing.csv`** (source: [Kaggle — yasserh/housing-price
 ### 1. Exploratory Data Analysis (EDA)
 Review of numerical and categorical variable distributions, outlier detection, and visualization to understand the relationship between each feature and price.
 
-### 2. Feature engineering
-- `area_bins` was created by binning the continuous `area` variable into categories, as an initial attempt to capture non-linear effects.
-- After evaluation, `area_bins` was found to be **redundant** with `area` (it was derived directly from it and added no additional predictive signal), so it was dropped, keeping only the continuous `area` feature.
+### 2. Encoding categorical features
+- Binary (yes/no) features such as `mainroad`, `guestroom`, `basement`, `hotwaterheating`, `airconditioning`, and `prefarea` were mapped to `0`/`1`.
+- The multi-class categorical feature `furnishingstatus` was transformed using **One-Hot Encoding**.
 
 ### 3. Data preprocessing
 - **Robust Scaling**: `RobustScaler` was applied to numerical features to mitigate the impact of outliers in the housing market (extreme property sizes/prices). The scaler was **fit only on the training set** and then used to transform both the training and test sets, avoiding data leakage.
@@ -126,8 +127,8 @@ Prediction errors were reviewed across the price range to identify where the mod
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/christianirshool-glitch/My-projects.git
-cd My-projects
+git clone https://github.com/christianirshool-glitch/Housing_Prices.git
+cd Housing_Prices
 
 # 2. Create and activate a virtual environment (recommended)
 python -m venv venv
