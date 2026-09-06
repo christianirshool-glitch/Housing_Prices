@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/31889248/README.2.md)
 # 🏡 Housing Price Prediction
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
